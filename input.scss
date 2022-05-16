@@ -141,12 +141,89 @@ table {
   font-family: "Inter", Arial, sans-serif;
 }
 
+%spacing-shared {
+  padding: 1rem;
+  gap: 1rem;
+}
+
+%button-shared {
+  padding: 1rem;
+  padding-inline: 5rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
 /* 
   ---------------------------- NAV ----------------------------
 */
 
 nav {
+  @extend %spacing-shared;
+
+  display: flex;
+  justify-content: space-between;
+
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+
   background-color: rgba(255, 255, 255, 0.97);
+
+  img {
+    height: 2rem;
+  }
+}
+
+.menu-toggle {
+  padding: 0;
+  background: transparent;
+  border: none;
+
+  .menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-block: 40px;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    font-size: 1.25rem;
+
+    background-color: white;
+    width: 60%;
+    height: 100%;
+
+    box-shadow: 0px 0px 20px rgb(63, 63, 63);
+
+    transition: transform 500ms;
+    transform: translateX(110%);
+
+    text-align: right;
+    padding-right: 35px;
+  }
+}
+
+.menu-toggle:focus-within {
+  .menu-items {
+    transform: translateX(0%);
+  }
 }
 
 /* 
@@ -154,7 +231,24 @@ nav {
 */
 
 header {
+  @extend %spacing-shared;
+
   height: 100vh;
   background: url("images/pexels-nice-guys-757444.webp") center;
   background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+  justify-content: center;
+  align-items: center;
+
+  >h2 {
+    color: white;
+  }
+
+  button {
+    @extend %button-shared;
+    background-color: rgba(255, 255, 255, 0.97);
+  }
 }
