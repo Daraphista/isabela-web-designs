@@ -158,7 +158,7 @@ button:active {
   background-color: lightgray;
 }
 
-.contact-us form, main .what-we-offer .card.product, main section, main .card-container .card, header, .menu-toggle .menu-items, nav {
+footer .links, footer, .contact-us form, main .what-we-offer .card.product, main section, main .card-container .card, header, .menu-toggle .menu-items, nav {
   padding: 1rem;
   gap: 1rem;
 }
@@ -170,7 +170,7 @@ header button {
   border: none;
 }
 
-.contact-us form, main .who-we-are .description, main .what-we-offer .card.product, main .introduction, main section, main .card-container .card, main, .menu-toggle .menu-items {
+footer .links, footer, .contact-us form, main .who-we-are .description, main .what-we-offer .card.product, main .introduction, main section, main .card-container .card, main, .menu-toggle .menu-items {
   display: flex;
   flex-direction: column;
 }
@@ -282,6 +282,9 @@ main section img {
 }
 main section:nth-of-type(even) {
   background-color: #f6f6f6;
+}
+main section:last-child {
+  padding-bottom: 5rem;
 }
 main .divider {
   height: 5rem;
@@ -400,6 +403,24 @@ main .who-we-are img:nth-child(2) {
 }
 .contact-us form button {
   padding: 1rem;
+}
+
+/* 
+---------------------------- FOOTER ----------------------------
+*/
+footer {
+  gap: 2rem;
+  min-height: 100vh;
+  background-image: url("./images/pexels-jeff-guab-2407636-2.webp");
+  background-position: center;
+  background-size: cover;
+}
+footer .website-logo {
+  width: 10rem;
+}
+footer .links {
+  padding: 0;
+  align-items: flex-start;
 }
 
 /*# sourceMappingURL=style.css.map */
