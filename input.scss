@@ -501,6 +501,9 @@ footer {
   @extend %flex-column;
   @extend %spacing-shared;
 
+  position: relative;
+  z-index: -1;
+
   gap: 2rem;
 
   min-height: 100vh;
