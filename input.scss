@@ -346,6 +346,12 @@ main {
     }
   }
 
+  .introduction {
+    @extend %flex-column;
+
+    gap: 2rem;
+  }
+
   .what-we-offer {
     .card.product {
       @extend %spacing-shared;

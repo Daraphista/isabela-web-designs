@@ -170,7 +170,7 @@ header button {
   border: none;
 }
 
-.contact-us form, main .who-we-are .description, main .what-we-offer .card.product, main section, main .card-container .card, main, .menu-toggle .menu-items {
+.contact-us form, main .who-we-are .description, main .what-we-offer .card.product, main .introduction, main section, main .card-container .card, main, .menu-toggle .menu-items {
   display: flex;
   flex-direction: column;
 }
@@ -300,6 +300,9 @@ main .divider .slanted-element {
   background-color: white;
   transform: skew(0, 4deg) translateY(-75%);
   box-shadow: 0px 0px 6px;
+}
+main .introduction {
+  gap: 2rem;
 }
 main .what-we-offer .card.product {
   background-color: white;
