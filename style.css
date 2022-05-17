@@ -144,7 +144,21 @@ table {
   font-family: "Inter", Arial, sans-serif;
 }
 
-header, nav {
+html {
+  line-height: 1.25;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:active {
+  background-color: lightgray;
+}
+
+.contact-us form, main .what-we-offer .card.product, main section, main .card-container .card, header, .menu-toggle .menu-items, nav {
   padding: 1rem;
   gap: 1rem;
 }
@@ -154,6 +168,11 @@ header button {
   padding-inline: 5rem;
   border-radius: 1rem;
   border: none;
+}
+
+.contact-us form, main .who-we-are .description, main .what-we-offer .card.product, main section, main .card-container .card, main, .menu-toggle .menu-items {
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -187,10 +206,8 @@ nav img {
   border: none;
 }
 .menu-toggle .menu-items {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding-block: 40px;
+  align-items: flex-end;
+  padding: 2rem;
   position: fixed;
   top: 0;
   right: 0;
@@ -198,11 +215,10 @@ nav img {
   background-color: white;
   width: 60%;
   height: 100%;
-  box-shadow: 0px 0px 20px rgb(63, 63, 63);
+  box-shadow: 0px 0px 20px;
   transition: transform 500ms;
   transform: translateX(110%);
   text-align: right;
-  padding-right: 35px;
 }
 
 .menu-toggle:focus-within .menu-items {
@@ -227,6 +243,160 @@ header > h2 {
 }
 header button {
   background-color: rgba(255, 255, 255, 0.97);
+}
+
+/* 
+---------------------------- MAIN ----------------------------
+*/
+main .card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: -6rem;
+}
+main .card-container .card {
+  aspect-ratio: 1/1;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  background-color: white;
+}
+main .card-container .card .icon {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .card-container .card img {
+  height: 4.25rem;
+}
+main .card-container .card h2 {
+  flex: 1;
+}
+main section {
+  background-color: white;
+  gap: 3rem;
+}
+main section img {
+  border-radius: 1rem;
+}
+main section:nth-of-type(even) {
+  background-color: #f6f6f6;
+}
+main .divider {
+  height: 5rem;
+  position: relative;
+  z-index: -1;
+  background-color: #f6f6f6;
+}
+main .divider:nth-of-type(even) {
+  background-color: white;
+}
+main .divider:nth-of-type(even) .slanted-element {
+  background-color: #f6f6f6;
+}
+main .divider .slanted-element {
+  height: 200%;
+  background-color: white;
+  transform: skew(0, 4deg) translateY(-75%);
+  box-shadow: 0px 0px 6px;
+}
+main .what-we-offer .card.product {
+  background-color: white;
+  border-style: solid;
+  border-radius: 1rem;
+  border-width: 4px 2px;
+  border-inline-color: #EBEBEB;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+main .what-we-offer .card.product:nth-child(1) {
+  border-block-color: #48BF53;
+}
+main .what-we-offer .card.product:nth-child(2) {
+  border-block-color: #11823B;
+}
+main .what-we-offer .card.product:nth-child(3) {
+  border-block-color: #02231C;
+}
+main .what-we-offer .description {
+  text-align: center;
+  color: #909090;
+}
+main .what-we-offer .price {
+  position: relative;
+}
+main .what-we-offer .price::before {
+  content: "$ ";
+  position: absolute;
+  font-size: 1rem;
+  left: -1rem;
+  top: 5px;
+}
+main .what-we-offer .price::after {
+  content: " / MO";
+  position: absolute;
+  font-size: 1rem;
+  right: -2.5rem;
+  bottom: 5px;
+}
+main .what-we-offer .disclaimer {
+  text-align: center;
+  color: #909090;
+  margin-top: -1.5rem;
+}
+main .what-we-offer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+main .what-we-offer li {
+  display: flex;
+  gap: 0.75rem;
+}
+main .what-we-offer li img {
+  height: 1rem;
+}
+main .who-we-are {
+  background-image: url(./images/philmap.svg);
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+main .who-we-are .description {
+  gap: 1rem;
+}
+main .who-we-are .images {
+  display: flex;
+  justify-content: space-between;
+}
+main .who-we-are img:nth-child(1) {
+  width: 6rem;
+}
+main .who-we-are img:nth-child(2) {
+  width: 13rem;
+}
+
+.contact-us form {
+  background-color: white;
+  border-radius: 1rem;
+}
+.contact-us form input, .contact-us form textarea, .contact-us form button {
+  border-radius: 1rem;
+  border: none;
+  background-color: #f6f6f6;
+  padding: 0.5rem;
+  padding-inline: 1rem;
+}
+.contact-us form textarea {
+  height: 10rem;
+  resize: none;
+}
+.contact-us form button {
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

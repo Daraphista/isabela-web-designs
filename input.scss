@@ -141,6 +141,20 @@ table {
   font-family: "Inter", Arial, sans-serif;
 }
 
+html {
+  line-height: 1.25;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+button:active {
+  background-color: lightgray;
+}
+
 %spacing-shared {
   padding: 1rem;
   gap: 1rem;
@@ -195,10 +209,11 @@ nav {
   border: none;
 
   .menu-items {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding-block: 40px;
+    @extend %spacing-shared;
+    @extend %flex-column;
+
+    align-items: flex-end;
+    padding: 2rem;
 
     position: fixed;
     top: 0;
@@ -210,13 +225,12 @@ nav {
     width: 60%;
     height: 100%;
 
-    box-shadow: 0px 0px 20px rgb(63, 63, 63);
+    box-shadow: 0px 0px 20px;
 
     transition: transform 500ms;
     transform: translateX(110%);
 
     text-align: right;
-    padding-right: 35px;
   }
 }
 
@@ -252,3 +266,216 @@ header {
     background-color: rgba(255, 255, 255, 0.97);
   }
 }
+
+/* 
+---------------------------- MAIN ----------------------------
+*/
+
+main {
+  @extend %flex-column;
+
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: -6rem;
+    
+    .card {
+      @extend %flex-column;
+      @extend %spacing-shared;
+    
+      aspect-ratio: 1/1;
+      border-radius: 1rem;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      background-color: white;
+    
+      .icon {
+        flex: 3;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      img {
+        height: 4.25rem;
+      }
+    
+      h2 {
+        flex: 1;
+      }
+    }
+  }
+
+  section {
+    @extend %flex-column;
+    @extend %spacing-shared;
+    background-color: white;
+
+    gap: 3rem;
+
+    img {
+      border-radius: 1rem;
+    }
+
+    &:nth-of-type(even) {
+      background-color: #f6f6f6;
+    }
+  }
+
+  .divider {
+    height: 5rem;
+    position: relative;
+    z-index: -1;
+    background-color: #f6f6f6;
+
+    &:nth-of-type(even) {
+      background-color: white;
+
+      .slanted-element {
+        background-color: #f6f6f6;
+      }
+    }
+
+    .slanted-element {
+      height: 200%;
+      background-color: white;
+      transform: skew(0, 4deg) translateY(-75%);
+      box-shadow: 0px 0px 6px;
+    }
+  }
+
+  .what-we-offer {
+    .card.product {
+      @extend %spacing-shared;
+      @extend %flex-column;
+
+      background-color: white;
+      border-style: solid;
+      border-radius: 1rem;
+      border-width: 4px 2px;
+      border-inline-color: #EBEBEB;
+
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      border-radius: 2rem;
+
+      &:nth-child(1) {
+        border-block-color: #48BF53;
+      }
+
+      &:nth-child(2) {
+        border-block-color: #11823B;
+      }
+
+      &:nth-child(3) {
+        border-block-color: #02231C;
+      }
+    }
+    
+    .description {
+      text-align: center;
+      color: #909090;
+    }
+
+    .price {
+      position: relative;
+
+      &::before {
+        content: "$ ";
+        position: absolute;
+        font-size: 1rem;
+        left: -1rem;
+        top: 5px;
+      }
+
+      &::after {
+        content: " / MO";
+        position: absolute;
+        font-size: 1rem;
+        right: -2.5rem;
+        bottom: 5px;
+      }
+    }
+    
+    .disclaimer {
+      text-align: center;
+      color: #909090;    
+      margin-top: -1.5rem;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+    }
+    
+    li {
+      display: flex;
+      gap: .75rem;
+
+      img {
+        height: 1rem;
+      }
+    }
+  }
+
+  .who-we-are {
+    background-image: url(./images/philmap.svg);
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .description {
+      @extend %flex-column;
+
+      gap: 1rem;  
+    }
+
+    .images {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    img:nth-child(1) {
+      width: 6rem;
+    }
+
+    img:nth-child(2) {
+      width: 13rem;
+    }
+  }
+}
+
+.contact-us {
+  form {
+    @extend %flex-column;
+    @extend %spacing-shared;
+
+    background-color: white;
+    border-radius: 1rem;
+
+    input, textarea, button {
+      border-radius: 1rem;
+      border: none;
+      background-color: #f6f6f6;
+      padding: .5rem;
+      padding-inline: 1rem;
+
+    }
+    
+    textarea {
+      height: 10rem;
+      resize: none;
+    }
+
+    button {
+      padding: 1rem;
+    }
+  }
+}
+
+
