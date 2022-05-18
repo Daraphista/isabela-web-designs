@@ -191,55 +191,61 @@ h2 {
 
 nav {
   @extend %spacing-shared;
-
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
-  z-index: 2;
-  position: absolute;
-  width: 100%;
-
-  background-color: rgba(255, 255, 255, 0.97);
-
-  img {
-    height: 2rem;
+  .menu-toggle {
+    padding: 0;
+    background: transparent;
+    border: none;
   }
-}
-
-.menu-toggle {
-  padding: 0;
-  background: transparent;
-  border: none;
 
   .menu-items {
     @extend %spacing-shared;
     @extend %flex-column;
-
-    align-items: flex-end;
-    padding: 2rem;
-
-    position: fixed;
-    top: 0;
-    right: 0;
-
-    font-size: 1.25rem;
-
-    background-color: white;
-    width: 60%;
-    height: 100%;
-
-    box-shadow: 0px 0px 20px;
-
-    transition: transform 500ms;
-    transform: translateX(110%);
-
-    text-align: right;
   }
 }
 
-.menu-toggle:focus-within {
-  .menu-items {
-    transform: translateX(0%);
+@media screen and (max-device-width: 640px) {
+  nav {  
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+  
+    background-color: rgba(255, 255, 255, 0.97);
+  
+    img {
+      height: 2rem;
+    }
+  
+    .menu-items {
+      align-items: flex-end;
+      padding: 2rem;
+  
+      position: fixed;
+      top: 0;
+      right: 0;
+  
+      font-size: 1.25rem;
+  
+      background-color: white;
+      width: 60%;
+      height: 100%;
+  
+      box-shadow: 0px 0px 20px;
+  
+      transition: transform 500ms;
+      transform: translateX(110%);
+  
+      text-align: right;
+    }
+    
+    .menu-toggle:focus-within {
+      .menu-items {
+        transform: translateX(0%);
+      }
+    }
   }
 }
 
