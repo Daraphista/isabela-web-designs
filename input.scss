@@ -141,22 +141,9 @@ table {
   font-family: "Inter", Arial, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  line-height: 1.25;
-}
-
-a {
-  text-decoration: none;
-  color: inherit; 
-}
-
-button:active {
-  background-color: lightgray;
-}
+$phone: 640px;
+$tablet: 768px;
+$desktop: 1024px;
 
 %spacing-shared {
   padding: 1rem;
@@ -173,6 +160,23 @@ button:active {
 %flex-column {
   display: flex;
   flex-direction: column;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.25;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+button:active {
+  background-color: lightgray;
 }
 
 h1 {
@@ -204,10 +208,16 @@ nav {
   .menu-items {
     @extend %spacing-shared;
     @extend %flex-column;
+
+    font-size: 1.25rem;
+  }
+
+  img {
+    height: 2.5rem;
   }
 }
 
-@media screen and (max-device-width: 640px) {
+@media screen and (min-width: $tablet) {
   nav {  
     z-index: 2;
     position: absolute;
@@ -227,8 +237,6 @@ nav {
       top: 0;
       right: 0;
   
-      font-size: 1.25rem;
-  
       background-color: white;
       width: 60%;
       height: 100%;
@@ -245,6 +253,30 @@ nav {
       .menu-items {
         transform: translateX(0%);
       }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  nav {
+    padding-inline: 15vw;
+    background-color: transparent;
+  
+    .menu-toggle {
+      img {
+        display: none;
+      }
+    }
+  
+    .menu-items {
+      width: auto;
+      transform: none;
+      display: flex;
+      position: relative;
+      flex-direction: row;
+      box-shadow: none;
+      background-color: transparent;
+      gap: 4rem;
     }
   }
 }

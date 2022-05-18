@@ -144,23 +144,6 @@ table {
   font-family: "Inter", Arial, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  line-height: 1.25;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button:active {
-  background-color: lightgray;
-}
-
 footer .links, footer, .contact-us form, main .what-we-offer .card.product, main section, main .card-container .card, header, nav .menu-items, nav {
   padding: 1rem;
   gap: 1rem;
@@ -176,6 +159,23 @@ header button {
 footer .links, footer, .contact-us form, main .who-we-are .description, main .what-we-offer .card.product, main .introduction, main section, main .card-container .card, main, nav .menu-items {
   display: flex;
   flex-direction: column;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.25;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:active {
+  background-color: lightgray;
 }
 
 h1 {
@@ -201,7 +201,14 @@ nav .menu-toggle {
   background: transparent;
   border: none;
 }
-@media screen and (max-device-width: 640px) {
+nav .menu-items {
+  font-size: 1.25rem;
+}
+nav img {
+  height: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
   nav {
     z-index: 2;
     position: absolute;
@@ -217,7 +224,6 @@ nav .menu-toggle {
     position: fixed;
     top: 0;
     right: 0;
-    font-size: 1.25rem;
     background-color: white;
     width: 60%;
     height: 100%;
@@ -228,6 +234,25 @@ nav .menu-toggle {
   }
   nav .menu-toggle:focus-within .menu-items {
     transform: translateX(0%);
+  }
+}
+@media screen and (min-width: 1024px) {
+  nav {
+    padding-inline: 15vw;
+    background-color: transparent;
+  }
+  nav .menu-toggle img {
+    display: none;
+  }
+  nav .menu-items {
+    width: auto;
+    transform: none;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    box-shadow: none;
+    background-color: transparent;
+    gap: 4rem;
   }
 }
 /* 
