@@ -460,6 +460,11 @@ main .contact-us form button {
   padding: 1rem;
 }
 
+@media screen and (max-width: 640px) {
+  main .who-we-are .philmap {
+    display: none;
+  }
+}
 @media screen and (min-width: 768px) {
   main section {
     padding-inline: 15vw;
@@ -499,6 +504,32 @@ main .contact-us form button {
   }
   main .what-we-offer .products .product a {
     margin-top: auto;
+  }
+  main .who-we-are {
+    background-image: none;
+    flex-direction: row;
+  }
+  main .who-we-are .information {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  main .who-we-are .information img:first-of-type {
+    max-width: 11.25rem;
+  }
+  main .who-we-are .information img:last-of-type {
+    max-width: 22.5rem;
+  }
+  main .who-we-are .philmap {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .who-we-are .philmap img {
+    flex: 1;
+    max-width: 27.5rem;
   }
 }
 @media screen and (min-width: 1024px) {

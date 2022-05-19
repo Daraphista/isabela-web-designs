@@ -563,7 +563,13 @@ main {
 }
 
 @media screen and (max-width: $phone) {
-
+  main {
+    .who-we-are {
+      .philmap {
+        display: none;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: $tablet) {
@@ -614,6 +620,38 @@ main {
           a {
             margin-top: auto;
           }
+        }
+      }
+    }
+
+    .who-we-are {
+      background-image: none;
+      flex-direction: row;
+
+      .information {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        img:first-of-type {
+          max-width: 11.25rem;
+        }
+
+        img:last-of-type {
+          max-width: 22.5rem;
+        }
+      }
+
+      .philmap {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          flex: 1;
+          max-width: 27.5rem;
         }
       }
     }
