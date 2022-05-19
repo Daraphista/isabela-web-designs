@@ -144,7 +144,7 @@ table {
   font-family: "Inter", Arial, sans-serif;
 }
 
-footer .links, footer, main .contact-us form, main .what-we-offer .card.product, main section, main .card-container .card, header, nav .menu-items, nav {
+footer .links, footer, main .contact-us form, main .what-we-offer .card.product, main .promises .card, main section, header, nav .menu-items, nav {
   padding: 1rem;
   gap: 1rem;
 }
@@ -156,7 +156,7 @@ header button {
   border: none;
 }
 
-footer .links, footer, main .contact-us form, main .who-we-are .description, main .what-we-offer .card.product, main .introduction-container .introduction, main .introduction-container, main section, main .card-container .card, main, nav .menu-items {
+footer .links, footer, main .contact-us form, main .who-we-are .description, main .what-we-offer .card.product, main .what-we-offer .products, main .introduction-container .introduction, main .introduction-container, main .promises .card, main section, main, nav .menu-items {
   display: flex;
   flex-direction: column;
 }
@@ -295,31 +295,6 @@ header button {
 main {
   box-shadow: 0px 0px 6px;
 }
-main .card-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: -4rem;
-}
-main .card-container .card {
-  aspect-ratio: 1/1;
-  border-radius: 1rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  background-color: white;
-}
-main .card-container .card .icon {
-  flex: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-main .card-container .card img {
-  height: 4.25rem;
-}
-main .card-container .card h2 {
-  flex: 1;
-}
 main section {
   background-color: white;
   gap: 3rem;
@@ -351,11 +326,41 @@ main .divider .slanted-element {
   transform: skew(0, 4deg) translateY(-75%);
   box-shadow: 0px 0px 6px;
 }
+main .promises {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: -4rem;
+}
+main .promises .card {
+  aspect-ratio: 1/1;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  background-color: white;
+}
+main .promises .card .icon {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .promises .card img {
+  height: 4.25rem;
+}
+main .promises .card h2 {
+  flex: 1;
+}
 main .introduction-container {
   gap: 3rem;
 }
 main .introduction-container .introduction {
   gap: 2rem;
+}
+main .what-we-offer .products {
+  gap: 3rem;
+  align-items: center;
+  padding-inline: 15vw;
 }
 main .what-we-offer .card.product {
   background-color: white;
@@ -367,6 +372,7 @@ main .what-we-offer .card.product {
   gap: 2rem;
   padding: 2rem;
   border-radius: 2rem;
+  max-width: 24.375rem;
 }
 main .what-we-offer .card.product:nth-child(1) {
   border-block-color: #48BF53;
@@ -475,6 +481,30 @@ main .contact-us form button {
   }
   main .introduction-container img {
     width: 50%;
+  }
+  main .what-we-offer {
+    padding-inline: 0;
+  }
+  main .what-we-offer > h1 {
+    padding-inline: 15vw;
+  }
+  main .what-we-offer .products {
+    flex-direction: row;
+    overflow: scroll;
+  }
+  main .what-we-offer .products .product {
+    min-height: 50rem;
+    min-width: 24.375rem;
+    max-width: 24.375rem;
+  }
+  main .what-we-offer .products .product a {
+    margin-top: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main .what-we-offer .products {
+    display: flex;
+    justify-content: space-between;
   }
 }
 /* 

@@ -334,40 +334,6 @@ main {
 
   box-shadow: 0px 0px 6px;
 
-  .card-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: -4rem;
-    
-    .card {
-      @extend %flex-column;
-      @extend %spacing-shared;
-    
-      aspect-ratio: 1/1;
-      border-radius: 1rem;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      text-align: center;
-      background-color: white;
-    
-      .icon {
-        flex: 3;
-    
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    
-      img {
-        height: 4.25rem;
-      }
-    
-      h2 {
-        flex: 1;
-      }
-    }
-  }
-
   section {
     @extend %flex-column;
     @extend %spacing-shared;
@@ -410,6 +376,40 @@ main {
     }
   }
 
+  .promises {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: -4rem;
+    
+    .card {
+      @extend %flex-column;
+      @extend %spacing-shared;
+    
+      aspect-ratio: 1/1;
+      border-radius: 1rem;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      background-color: white;
+    
+      .icon {
+        flex: 3;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      img {
+        height: 4.25rem;
+      }
+    
+      h2 {
+        flex: 1;
+      }
+    }
+  }
+
   .introduction-container {
     @extend %flex-column;
 
@@ -423,6 +423,13 @@ main {
   }
 
   .what-we-offer {
+    .products {
+      @extend %flex-column;
+      gap: 3rem;
+      align-items: center;
+      padding-inline: 15vw; 
+    }
+
     .card.product {
       @extend %spacing-shared;
       @extend %flex-column;
@@ -437,6 +444,7 @@ main {
       gap: 2rem;
       padding: 2rem;
       border-radius: 2rem;
+      max-width: 24.375rem;
 
       &:nth-child(1) {
         border-block-color: #48BF53;
@@ -554,6 +562,10 @@ main {
   }
 }
 
+@media screen and (max-width: $phone) {
+
+}
+
 @media screen and (min-width: $tablet) {
   main {
     section {
@@ -580,6 +592,40 @@ main {
 
       img {
         width: 50%;
+      }
+    }
+
+    .what-we-offer {
+      padding-inline: 0;
+
+      & > h1 {
+        padding-inline: 15vw;
+      }
+
+      .products {
+        flex-direction: row;
+        overflow: scroll;
+        
+        .product {
+          min-height: 50rem;
+          min-width: 24.375rem;
+          max-width: 24.375rem;
+          
+          a {
+            margin-top: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  main {
+    .what-we-offer {
+      .products {
+        display: flex;
+        justify-content: space-between;
       }
     }
   }
