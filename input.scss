@@ -332,6 +332,8 @@ header {
 main {
   @extend %flex-column;
 
+  z-index: 2;
+  position: relative;
   box-shadow: 0px 0px 6px;
 
   section {
@@ -676,9 +678,6 @@ main {
 footer {
   @extend %flex-column;
   @extend %spacing-shared;
-
-  position: relative;
-  z-index: -1;
 
   gap: 2rem;
 

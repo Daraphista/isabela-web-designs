@@ -293,6 +293,8 @@ header button {
 ---------------------------- MAIN ----------------------------
 */
 main {
+  z-index: 2;
+  position: relative;
   box-shadow: 0px 0px 6px;
 }
 main section {
@@ -542,8 +544,6 @@ main .contact-us form button {
 ---------------------------- FOOTER ----------------------------
 */
 footer {
-  position: relative;
-  z-index: -1;
   gap: 2rem;
   min-height: 100vh;
   background-image: url("./images/pexels-jeff-guab-2407636-2.webp");
