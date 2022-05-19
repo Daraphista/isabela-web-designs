@@ -218,6 +218,9 @@ nav .menu-toggle {
   background: transparent;
   border: none;
 }
+nav .menu-toggle:hover {
+  color: black;
+}
 nav .menu-items {
   font-size: 1.25rem;
 }
