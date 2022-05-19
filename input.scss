@@ -189,6 +189,10 @@ h2 {
   font-weight: 700;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* 
   ---------------------------- NAV ----------------------------
 */
@@ -406,10 +410,16 @@ main {
     }
   }
 
-  .introduction {
+  .introduction-container {
     @extend %flex-column;
 
-    gap: 2rem;
+    gap: 3rem;
+
+    .introduction {
+      @extend %flex-column;
+  
+      gap: 2rem;
+    }
   }
 
   .what-we-offer {
@@ -514,32 +524,63 @@ main {
       width: 13rem;
     }
   }
+  
+  .contact-us {
+    form {
+      @extend %flex-column;
+      @extend %spacing-shared;
+  
+      background-color: white;
+      border-radius: 1rem;
+  
+      input, textarea, button {
+        border-radius: 1rem;
+        border: none;
+        background-color: #f6f6f6;
+        padding: .5rem;
+        padding-inline: 1rem;
+  
+      }
+      
+      textarea {
+        height: 10rem;
+        resize: none;
+      }
+  
+      button {
+        padding: 1rem;
+      }
+    }
+  }
 }
 
-.contact-us {
-  form {
-    @extend %flex-column;
-    @extend %spacing-shared;
+@media screen and (min-width: $tablet) {
+  main {
+    section {
+      padding-inline: 15vw;
+  
+      .promises {
+        display: flex;
+        justify-content: space-between;
 
-    background-color: white;
-    border-radius: 1rem;
+        .card {
+          flex: 1;
+          max-width: 18rem;
 
-    input, textarea, button {
-      border-radius: 1rem;
-      border: none;
-      background-color: #f6f6f6;
-      padding: .5rem;
-      padding-inline: 1rem;
-
-    }
-    
-    textarea {
-      height: 10rem;
-      resize: none;
+          img {
+            height: 3rem;
+          }
+        }
+      }
     }
 
-    button {
-      padding: 1rem;
+    .introduction-container {
+      flex-direction: row;
+      align-items: center;
+
+      img {
+        width: 50%;
+      }
     }
   }
 }

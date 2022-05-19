@@ -144,7 +144,7 @@ table {
   font-family: "Inter", Arial, sans-serif;
 }
 
-footer .links, footer, .contact-us form, main .what-we-offer .card.product, main section, main .card-container .card, header, nav .menu-items, nav {
+footer .links, footer, main .contact-us form, main .what-we-offer .card.product, main section, main .card-container .card, header, nav .menu-items, nav {
   padding: 1rem;
   gap: 1rem;
 }
@@ -156,7 +156,7 @@ header button {
   border: none;
 }
 
-footer .links, footer, .contact-us form, main .who-we-are .description, main .what-we-offer .card.product, main .introduction, main section, main .card-container .card, main, nav .menu-items {
+footer .links, footer, main .contact-us form, main .who-we-are .description, main .what-we-offer .card.product, main .introduction-container .introduction, main .introduction-container, main section, main .card-container .card, main, nav .menu-items {
   display: flex;
   flex-direction: column;
 }
@@ -186,6 +186,10 @@ h1 {
 h2 {
   font-size: 1.125rem;
   font-weight: 700;
+}
+
+img {
+  max-width: 100%;
 }
 
 /* 
@@ -347,7 +351,10 @@ main .divider .slanted-element {
   transform: skew(0, 4deg) translateY(-75%);
   box-shadow: 0px 0px 6px;
 }
-main .introduction {
+main .introduction-container {
+  gap: 3rem;
+}
+main .introduction-container .introduction {
   gap: 2rem;
 }
 main .what-we-offer .card.product {
@@ -428,26 +435,48 @@ main .who-we-are img:nth-child(1) {
 main .who-we-are img:nth-child(2) {
   width: 13rem;
 }
-
-.contact-us form {
+main .contact-us form {
   background-color: white;
   border-radius: 1rem;
 }
-.contact-us form input, .contact-us form textarea, .contact-us form button {
+main .contact-us form input, main .contact-us form textarea, main .contact-us form button {
   border-radius: 1rem;
   border: none;
   background-color: #f6f6f6;
   padding: 0.5rem;
   padding-inline: 1rem;
 }
-.contact-us form textarea {
+main .contact-us form textarea {
   height: 10rem;
   resize: none;
 }
-.contact-us form button {
+main .contact-us form button {
   padding: 1rem;
 }
 
+@media screen and (min-width: 768px) {
+  main section {
+    padding-inline: 15vw;
+  }
+  main section .promises {
+    display: flex;
+    justify-content: space-between;
+  }
+  main section .promises .card {
+    flex: 1;
+    max-width: 18rem;
+  }
+  main section .promises .card img {
+    height: 3rem;
+  }
+  main .introduction-container {
+    flex-direction: row;
+    align-items: center;
+  }
+  main .introduction-container img {
+    width: 50%;
+  }
+}
 /* 
 ---------------------------- FOOTER ----------------------------
 */
