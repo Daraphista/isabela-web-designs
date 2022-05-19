@@ -217,7 +217,7 @@ nav {
   }
 }
 
-@media screen and (min-width: $tablet) {
+@media screen and (max-width: $desktop) {
   nav {  
     z-index: 2;
     position: absolute;
