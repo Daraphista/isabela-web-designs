@@ -275,6 +275,16 @@ header button {
   background-color: rgba(255, 255, 255, 0.97);
 }
 
+@media screen and (min-width: 640px) {
+  header h1 {
+    max-width: 34.375rem;
+    text-align: center;
+  }
+  header h2 {
+    max-width: 37.5rem;
+    text-align: center;
+  }
+}
 /* 
 ---------------------------- MAIN ----------------------------
 */

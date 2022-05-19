@@ -307,6 +307,20 @@ header {
   }
 }
 
+@media screen and (min-width: $phone) {
+  header {
+    h1 {
+      max-width: 34.375rem;
+      text-align: center;
+    }
+    
+    h2 {
+      max-width: 37.5rem;
+      text-align: center;
+    }
+  }
+}
+
 /* 
 ---------------------------- MAIN ----------------------------
 */
