@@ -195,6 +195,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
 }
 nav .menu-toggle {
   padding: 0;
@@ -210,9 +213,6 @@ nav img {
 
 @media screen and (max-width: 1024px) {
   nav {
-    z-index: 2;
-    position: absolute;
-    width: 100%;
     background-color: rgba(255, 255, 255, 0.97);
   }
   nav img {
