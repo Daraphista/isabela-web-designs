@@ -376,7 +376,6 @@ main .introduction-container .introduction {
 main .what-we-offer .products {
   gap: 3rem;
   align-items: center;
-  padding-inline: 15vw;
 }
 main .what-we-offer .card.product {
   background-color: white;
